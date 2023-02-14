@@ -1,0 +1,56 @@
+.mat-icon {
+  position: fixed;
+  top: 0;
+  padding: 15px;
+  right: auto;
+  z-index: 999999;
+  color: #f8ac36;
+  font-size: 35px;
+  cursor: pointer;
+  width: 40px;
+  height: 39px;
+}
+
+.mat-list-item {
+  height: 60px !important;
+}
+
+.mat-list-item,
+.mat-expansion-panel {
+  border-bottom: 1px solid #dedbdb60;
+}
+
+
+.active {
+  background-color: #000000;
+  position: relative;
+  &::before {
+   content: '';
+   background-color: #F8AC36;
+   width: 10px;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+ }
+}
+
+.alert-success{
+  background-color: #00a558;
+  color: #FFF;
+  padding: 10PX;
+  position: absolute;
+  top: 77px;
+  right: 25px;
+  z-index: 9999999;
+  // right: 60px;
+}
+
+@media (max-width:767px) {
+  .alert-heading{
+    font-size: 14px;
+  }
+  .alert-success{
+      top: -50px
+  }
+}

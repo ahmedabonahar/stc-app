@@ -1,0 +1,49 @@
+
+
+
+
+<div class="container">
+  <div class="row pt-3">
+    <div class="col-lg-5">
+      <h4>Select Category</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>All Categories</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let categoryName of categories" [value]="categoryName" (click)="getAllCategoryDOM(categoryName)">
+            {{categoryName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row py-2">
+
+    <div class="col-lg-4 text-center mt-2" *ngFor="let product of
+      allProductsData">
+      <div class="card-wrapper">
+        <mat-card class="example-card">
+          <mat-card-header>
+          </mat-card-header>
+          <div class="img">
+            <img mat-card-image width="150" height="150"
+              [src]="product.image" alt="img">
+          </div>
+          <mat-card-title><b>Producr Name:</b> {{ product.title.slice(0,16)
+            }} ...</mat-card-title>
+          <mat-card-subtitle>
+            <b>Price:</b> {{ product.price }}
+          </mat-card-subtitle>
+          <mat-card-content>
+            {{ product.description.slice(0,45) }} ...
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button color="accent" class="mr-1">Add to
+              Cart</button>
+            <button mat-stroked-button color="primary" [routerLink]="['product-details', product.id]">Veiw Details</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
